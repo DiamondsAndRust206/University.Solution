@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model University.Models.Student
+
+<h4>Add new student</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.LabelFor(model => model.DateEnrolled)
+  @Html.TextBoxFor(model => model.DateEnrolled)
+
+  @Html.Label("Select course")
+  @Html.DropDownList("CourseId")
+
+  <input type="submit" value="Add new student" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all students", "Index")</p>
